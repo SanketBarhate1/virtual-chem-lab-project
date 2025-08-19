@@ -1,0 +1,284 @@
+/* =============== Variables =============== */
+:root{
+  --bg:#0b1020;
+  --card:#121730;
+  --accent:#5eead4;
+  --accent-2:#60a5fa;
+  --text:#e5e7eb;
+  --muted:#94a3b8;
+  --danger:#f87171;
+  --safe:#34d399;
+  --warn:#fbbf24;
+  --glass: rgba(255,255,255,0.06);
+  --glass-br: rgba(255,255,255,0.18);
+}
+
+/* =============== Base =============== */
+*{box-sizing:border-box}
+html,body{
+  margin:0; padding:0;
+  background: radial-gradient(1200px 800px at 10% -10%, #152046 0%, #0B1020 35%, #060913 100%);
+  color:var(--text);
+  /* Updated font family for a modern look */
+  font-family: "Outfit", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji","Segoe UI Emoji";
+  min-height:100%;
+}
+a{ color: #b3e6ff; text-decoration: none; }
+a:hover{ text-decoration: underline; }
+a.button{ color: #0b1020;}
+.container{ width: min(1100px, 92vw); margin: 0 auto; padding: 24px; }
+
+/* Glow grid background */
+.grid-bg{
+  position: fixed; inset: 0; pointer-events: none; z-index: -1;
+  background-image: linear-gradient(transparent 23px, rgba(255,255,255,0.04) 24px),
+                    linear-gradient(90deg, transparent 23px, rgba(255,255,255,0.04) 24px);
+  background-size: 24px 24px;
+  mask-image: linear-gradient(#000, transparent 70%);
+}
+
+/* =============== Cards =============== */
+.card{
+  background: linear-gradient(180deg, var(--glass), transparent);
+  border: 1px solid var(--glass-br);
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.35), inset 0 0 0 1px rgba(255,255,255,0.04);
+  padding: 20px;
+  backdrop-filter: blur(10px);
+}
+.card.dark{ background: linear-gradient(180deg, rgba(17,24,39,0.6), rgba(17,24,39,0.2)); }
+
+/* =============== Buttons (enhanced) =============== */
+.button{
+  display:inline-flex; align-items:center; gap:10px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  color:#0b1020; border:0; border-radius: 14px; padding: 14px 20px;
+  font-weight: 800; letter-spacing: .3px; cursor: pointer;
+  box-shadow: 0 12px 28px rgba(94,234,212,.28), 0 8px 22px rgba(96,165,250,.22);
+  transform: translateY(0); transition: transform .2s ease, box-shadow .2s ease, filter .3s ease;
+}
+.button:hover{ transform: translateY(-3px); filter: saturate(1.12) brightness(1.05); }
+.button.ghost{
+  background: transparent; color: var(--text);
+  border: 1px solid var(--glass-br);
+  box-shadow: none;
+}
+
+/* =============== Header =============== */
+.header{
+  padding-top: 36px; padding-bottom: 16px;
+}
+.brand{
+  display:flex; align-items:center; gap:12px; font-weight:800; letter-spacing:.4px;
+}
+.logo{
+  width: 38px; height: 38px; border-radius: 12px;
+  background: conic-gradient(from 210deg at 50% 50%, var(--accent) 0 25%, var(--accent-2) 25% 60%, #a78bfa 60% 100%);
+  box-shadow: 0 0 40px rgba(96,165,250,.35), inset 0 0 12px rgba(0,0,0,.35);
+}
+
+/* =============== Hero =============== */
+.hero{
+  display:grid; grid-template-columns: 1.2fr .8fr; gap: 24px; align-items: center;
+}
+/* Enhanced gradient headline */
+.hero h1{
+  font-size: clamp(28px, 4vw, 46px);
+  margin: 10px 0 8px 0;
+  background: linear-gradient(90deg, #e5fff5 0%, #b2f7ff 35%, #c3b5ff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 2px 14px rgba(96,165,250,.15);
+}
+.sub{
+  color: var(--muted); line-height: 1.6; margin-bottom: 14px;
+}
+.badge{
+  display:inline-flex; gap:8px; align-items:center; font-size: 12px;
+  background: rgba(94,234,212,.12); border: 1px solid rgba(94,234,212,.25);
+  color: var(--accent); padding: 6px 10px; border-radius: 999px;
+}
+
+/* =============== Lab Canvas =============== */
+.lab{
+  display:grid; grid-template-columns: 1fr 1fr; gap: 20px;
+}
+.toolbox, .workspace{ min-height: 380px; }
+.section-title{ font-weight: 800; letter-spacing: .4px; margin: 0 0 8px; }
+.kit{
+  display:flex; flex-wrap: wrap; gap: 12px; padding: 10px 2px;
+}
+.tag{
+  padding: 10px 12px; border: 1px dashed rgba(255,255,255,.15);
+  border-radius: 12px; cursor: grab; user-select: none;
+  background: rgba(255,255,255,.04);
+}
+.tag:active{ cursor: grabbing; }
+.glassware{
+  display:flex; gap: 16px; align-items:center; flex-wrap: wrap;
+}
+.glass{
+  width: 120px; height: 160px; border: 2px solid rgba(255,255,255,.2);
+  border-radius: 12px 12px 8px 8px; position: relative; overflow: hidden;
+  background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.01));
+}
+.glass .liquid{
+  position: absolute; bottom: 0; left: 0; width: 100%; height: 0%;
+  background: linear-gradient(180deg, rgba(96,165,250,.6), rgba(96,165,250,.2));
+  transition: height .6s ease, filter .3s ease;
+}
+.glow{
+  position:absolute; inset:-60px; filter: blur(32px); opacity:.25; pointer-events:none;
+  background: radial-gradient(500px 300px at 10% 0%, rgba(94,234,212,.6), transparent),
+              radial-gradient(500px 300px at 90% 100%, rgba(96,165,250,.6), transparent);
+}
+.dropzone{
+  min-height: 160px; border: 2px dashed rgba(255,255,255,.18);
+  border-radius: 14px; display:flex; align-items:center; justify-content:center;
+  padding: 12px; text-align:center; color: var(--muted);
+  transition: border-color .2s ease, background .2s ease;
+}
+.dropzone.active{
+  border-color: var(--accent); background: rgba(94,234,212,.08); color: var(--text);
+}
+
+/* =============== Panels =============== */
+.panel{
+  display:grid; grid-template-columns: 1fr 1fr; gap: 16px;
+}
+.kv{ display:grid; grid-template-columns: 120px 1fr; gap: 10px; color: var(--muted); }
+.kv b{ color: var(--text); }
+
+/* =============== Pills / select inputs =============== */
+.row{ display:flex; gap: 12px; align-items:center; flex-wrap: wrap; }
+select, input[type='text']{
+  background: rgba(255,255,255,.06); color: var(--text);
+  border: 1px solid rgba(255,255,255,.18); border-radius: 12px;
+  padding: 10px 12px; outline: none; min-width: 180px;
+}
+label{ color: var(--muted); font-size: 14px; }
+
+/* =============== Animations =============== */
+@keyframes fizz{
+  0%{ transform: translateY(0) scale(1); opacity: 0.9; }
+  100%{ transform: translateY(-140px) scale(.6); opacity: 0; }
+}
+.bubble{
+  position:absolute; bottom:18px; left:50%;
+  width: 12px; height: 12px; border-radius:50%;
+  background: rgba(255,255,255,.8);
+  animation: fizz 1.8s linear infinite;
+}
+.bubble:nth-child(2){ left: 35%; animation-delay: .3s; }
+.bubble:nth-child(3){ left: 65%; animation-delay: .6s; }
+.bubble:nth-child(4){ left: 20%; animation-delay: .9s; }
+.spark{
+  position:absolute; inset:0; pointer-events:none;
+  background: radial-gradient(6px 6px at 40% 70%, rgba(255,255,255,.9), transparent 60%),
+              radial-gradient(5px 5px at 70% 50%, rgba(255,255,255,.9), transparent 60%);
+  opacity:0; transition: opacity .3s ease;
+}
+
+/* Responsive */
+@media (max-width: 900px){
+  .hero{ grid-template-columns: 1fr; }
+  .lab{ grid-template-columns: 1fr; }
+  .panel{ grid-template-columns: 1fr; }
+}
+/* Special styling for Chemical A & B dropdown text */
+#chemA option, #chemB option {
+  color: #0d47a1; /* deep blue */
+  font-weight: bold;
+}
+
+/* Dropdown selected text */
+#chemA, #chemB {
+  color: #0d47a1;
+  font-weight: bold;
+}
+
+/* Chemical tags style */
+.tag {
+  display: inline-block;
+  background: linear-gradient(135deg, #ff9800, #f44336); /* orange to red gradient */
+  color: white;
+  padding: 6px 10px;
+  margin: 3px;
+  border-radius: 4px;
+  font-weight: bold;
+  box-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+}
+
+/* Tags inside 'Added' section */
+#added .tag {
+  background: linear-gradient(135deg, #4caf50, #2e7d32); /* green gradient for added */
+}
+/* === Front Page Enhancements === */
+
+/* 3D Brand Text */
+.brand-text {
+  font-size: 1.8rem;
+  font-weight: 900;
+  background: linear-gradient(90deg, #ffecd2, #fcb69f);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+}
+
+/* Hero Section Heading Glow */
+.hero h1 {
+  font-size: clamp(28px, 4vw, 50px);
+  background: linear-gradient(90deg, #ff9a9e, #fad0c4, #fad0c4, #fbc2eb);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0px 2px 10px rgba(255, 182, 193, 0.6);
+}
+
+/* Subtext */
+.sub {
+  font-size: 1.05rem;
+  color: #d1d5db;
+  line-height: 1.7;
+  text-shadow: 0px 1px 2px rgba(0,0,0,0.4);
+}
+
+/* Button Glow Effect */
+.button {
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  border-radius: 18px;
+  box-shadow: 0px 4px 15px rgba(94,234,212,0.4);
+}
+.button:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0px 6px 20px rgba(94,234,212,0.6);
+}
+
+/* Card with Depth */
+.card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+  border: 1px solid rgba(255,255,255,0.12);
+  box-shadow: 0px 6px 20px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-6px);
+}
+
+/* Chemical Names */
+.kv b {
+  color: #ffb347;
+  font-weight: bold;
+  text-shadow: 0px 1px 2px rgba(0,0,0,0.4);
+}
+
+/* Badge Styling */
+.badge {
+  font-weight: bold;
+  background: linear-gradient(90deg, #89f7fe, #66a6ff);
+  color: #0b1020;
+  box-shadow: 0px 2px 6px rgba(102,166,255,0.5);
+}

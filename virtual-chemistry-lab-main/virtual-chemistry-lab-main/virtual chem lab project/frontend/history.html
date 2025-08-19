@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>History — Virtual Chemistry Lab</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    table{ width:100%; border-collapse: collapse; }
+    th,td{ padding:10px 12px; border-bottom:1px solid rgba(255,255,255,.1); text-align:left; }
+    th{ color: var(--muted); font-weight:600; }
+    tr:hover{ background: rgba(255,255,255,.03); }
+  </style>
+<link rel="stylesheet" href="mix.css">
+</head>
+<body data-page="history">
+  <div class="grid-bg"></div>
+  <header class="container header">
+    <div class="brand">
+      <a href="index.html" class="logo" title="Home"></a>
+      <div>Experiment History</div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <div id="empty" style="display:none; color:var(--muted)">No experiments yet. Run one from the <a href="experiment.html">experiment page</a>.</div>
+      <table>
+        <thead>
+          <tr>
+            <th>#</th><th>User</th><th>Chemicals</th><th>Result</th><th>Date & Time</th>
+          </tr>
+        </thead>
+        <tbody id="histBody"></tbody>
+      </table>
+      <div class="row" style="margin-top:12px">
+        <a class="button" href="experiment.html">New Experiment</a>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+<script src="mix.js" defer></script>
+</body>
+</html>

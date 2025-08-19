@@ -1,0 +1,110 @@
+{
+  "chemicals": [
+    {"id":"HCl","name":"Hydrochloric Acid","type":"acid","color":"rgba(255,90,90,0.6)"},
+    {"id":"H2SO4","name":"Sulfuric Acid","type":"acid","color":"rgba(255,180,60,0.6)"},
+    {"id":"HNO3","name":"Nitric Acid","type":"acid","color":"rgba(255,210,80,0.6)"},
+    {"id":"CH3COOH","name":"Acetic Acid","type":"acid","color":"rgba(255,150,110,0.6)"},
+    {"id":"NaOH","name":"Sodium Hydroxide","type":"base","color":"rgba(90,240,180,0.6)"},
+    {"id":"KOH","name":"Potassium Hydroxide","type":"base","color":"rgba(80,230,210,0.6)"},
+    {"id":"NH3","name":"Ammonia","type":"base","color":"rgba(180,240,200,0.6)"},
+    {"id":"Na2CO3","name":"Sodium Carbonate","type":"base","color":"rgba(200,255,255,0.6)"},
+    {"id":"NaHCO3","name":"Sodium Bicarbonate","type":"base","color":"rgba(210,255,240,0.6)"},
+    {"id":"NaCl","name":"Sodium Chloride","type":"salt","color":"rgba(255,255,255,0.7)"},
+    {"id":"AgNO3","name":"Silver Nitrate","type":"salt","color":"rgba(230,230,230,0.8)"},
+    {"id":"BaCl2","name":"Barium Chloride","type":"salt","color":"rgba(220,240,255,0.7)"},
+    {"id":"CuSO4","name":"Copper(II) Sulfate","type":"salt","color":"rgba(0,150,255,0.6)"},
+    {"id":"FeCl3","name":"Ferric Chloride","type":"salt","color":"rgba(200,150,80,0.6)"},
+    {"id":"PbNO3","name":"Lead(II) Nitrate","type":"salt","color":"rgba(240,240,200,0.8)"},
+    {"id":"KMnO4","name":"Potassium Permanganate","type":"oxidizer","color":"rgba(120,0,160,0.6)"},
+    {"id":"K2Cr2O7","name":"Potassium Dichromate","type":"oxidizer","color":"rgba(255,130,30,0.6)"},
+    {"id":"FeSO4","name":"Iron(II) Sulfate","type":"salt","color":"rgba(120,170,170,0.6)"},
+    {"id":"ZnSO4","name":"Zinc Sulfate","type":"salt","color":"rgba(190,190,200,0.6)"},
+    {"id":"Ca(OH)2","name":"Calcium Hydroxide","type":"base","color":"rgba(170,250,190,0.6)"}
+  ],
+  "reactions": {
+    "HCl+NaOH": {
+      "reaction": "Neutralization",
+      "description": "Forms NaCl and H2O with slight heat.",
+      "safety": "Exothermic; avoid splashes.",
+      "color": "rgba(255,255,190,0.6)",
+      "animation": "pulse-bubbles"
+    },
+    "H2SO4+NaOH": {
+      "reaction": "Neutralization",
+      "description": "Forms Na2SO4 and H2O; stronger heat.",
+      "safety": "Add acid to base slowly.",
+      "color": "rgba(255,235,160,0.6)",
+      "animation": "pulse-strong"
+    },
+    "HNO3+Na2CO3": {
+      "reaction": "Gas evolution",
+      "description": "CO2 effervescence; forms NaNO3 and H2O.",
+      "safety": "Vent gas; avoid inhalation.",
+      "color": "rgba(240,250,255,0.7)",
+      "animation": "fizz-fast"
+    },
+    "CH3COOH+NaHCO3": {
+      "reaction": "Effervescence",
+      "description": "Vigorous CO2 bubbles; acetate formed.",
+      "safety": "Do not seal container.",
+      "color": "rgba(240,255,240,0.7)",
+      "animation": "fizz-soft"
+    },
+    "AgNO3+NaCl": {
+      "reaction": "Precipitation",
+      "description": "Curdy white AgCl precipitate.",
+      "safety": "Protect from light.",
+      "color": "rgba(240,240,240,0.9)",
+      "animation": "cloudy-fall"
+    },
+    "BaCl2+H2SO4": {
+      "reaction": "Precipitation",
+      "description": "Dense white BaSO4 forms.",
+      "safety": "Dispose per guidelines.",
+      "color": "rgba(255,255,255,0.9)",
+      "animation": "cloudy-dense"
+    },
+    "CuSO4+FeSO4": {
+      "reaction": "Ion exchange",
+      "description": "Color shift due to iron and copper ions.",
+      "safety": "Avoid ingestion.",
+      "color": "rgba(120,170,170,0.6)",
+      "animation": "swirl-color"
+    },
+    "CuSO4+FeCl3": {
+      "reaction": "Complex formation",
+      "description": "Deepening color; complex ions.",
+      "safety": "Avoid skin contact.",
+      "color": "rgba(80,120,200,0.6)",
+      "animation": "swirl-deep"
+    },
+    "KMnO4+FeSO4": {
+      "reaction": "Redox",
+      "description": "KMnO4 decolorizes as Fe2+ oxidizes.",
+      "safety": "Stains; handle carefully.",
+      "color": "rgba(150,80,160,0.5)",
+      "animation": "fade-out"
+    },
+    "K2Cr2O7+FeSO4": {
+      "reaction": "Redox",
+      "description": "Cr2O7^2− reduces; green tinge appears.",
+      "safety": "Toxic; PPE required.",
+      "color": "rgba(120,220,140,0.5)",
+      "animation": "fade-green"
+    },
+    "NH3+HCl": {
+      "reaction": "Neutralization",
+      "description": "Ammonium chloride white smoke in air path.",
+      "safety": "Irritant vapors.",
+      "color": "rgba(255,255,255,0.8)",
+      "animation": "smoke-line"
+    },
+    "Ca(OH)2+CO2": {
+      "reaction": "Carbonation",
+      "description": "Limewater turns milky (CaCO3).",
+      "safety": "Ventilate.",
+      "color": "rgba(255,255,255,0.8)",
+      "animation": "milk-cloud"
+    }
+  }
+}

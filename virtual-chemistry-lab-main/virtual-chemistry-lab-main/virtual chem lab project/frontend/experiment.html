@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Experiment — Virtual Chemistry Lab</title>
+  <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="mix.css">
+</head>
+<body data-page="experiment">
+  <div class="grid-bg"></div>
+  <header class="container header">
+    <div class="brand">
+      <a href="index.html" class="logo" title="Home"></a>
+      <div>Experiment</div>
+    </div>
+  </header>
+
+  <main class="container lab">
+    <section class="card toolbox">
+      <h3 class="section-title">Choose Chemicals</h3>
+      <div class="row" style="margin-bottom:8px">
+        <label for="userName">Your Name</label>
+        <input id="userName" type="text" placeholder="e.g., Prachi">
+      </div>
+      <div class="row">
+        <label for="chemA">Chemical A</label>
+        <select id="chemA"><option value="">Select</option></select>
+        <button id="addA" class="button">Add to Glassware</button>
+      </div>
+      <div class="row">
+        <label for="chemB">Chemical B</label>
+        <select id="chemB"><option value="">Select</option></select>
+        <button id="addB" class="button">Add to Glassware</button>
+      </div>
+
+      <h4 class="section-title" style="margin-top:14px">Drag from Library</h4>
+      <div id="chemTags" class="kit card"></div>
+    </section>
+
+    <section class="card workspace">
+      <div class="glow"></div>
+      <h3 class="section-title">Glassware & Mixing</h3>
+      <div class="glassware">
+        <div class="glass card" id="beaker">
+          <div class="liquid" id="liquid"></div>
+          <div class="spark" id="spark"></div>
+          <div id="beakerDrop" class="dropzone" style="position:absolute; inset:8px; border-radius:12px;">Drop chemicals here</div>
+        </div>
+        <div>
+          <div class="card">
+            <div class="section-title">Added</div>
+            <div id="added" class="kit"></div>
+          </div>
+          <div class="row" style="margin-top:14px">
+            <button id="mixBtn" class="button">Mix & Observe</button>
+            <a class="button ghost" href="history.html">View History</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+<script src="mix.js" defer></script>
+</body>
+</html>

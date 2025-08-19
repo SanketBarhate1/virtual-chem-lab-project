@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Virtual Chemistry Lab</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="mix.css">
+</head>
+<body data-page="index">
+  <div class="grid-bg"></div>
+  <header class="container header">
+    <div class="brand">
+      <div class="logo"></div>
+      <div class="brand-text">Virtual Chemistry Lab</div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="card">
+        <span class="badge">Interactive • Educational • Fun</span>
+        <h1>Mix, Heat, Observe — Safe Experiments in Your Browser 🔬</h1>
+        <p class="sub">
+          Build chemistry intuition with an elegant, touch-friendly lab. Choose chemicals, mix them in virtual glassware,
+          and watch reactions with beautiful animations and instant safety guidance.
+        </p>
+        <div class="row">
+          <a class="button" href="experiment.html">Start Experiment</a>
+          <a class="button ghost" href="history.html">History</a>
+        </div>
+        <div class="info-text">
+          Built for Python/Flask backend — this frontend works offline using local data.
+        </div>
+      </div>
+
+      <div class="card dark">
+        <h3 class="section-title">What’s Inside</h3>
+        <div class="panel">
+          <div class="kv"><b>Chemical Library</b><span>Formulas, molar mass & hazard info</span></div>
+          <div class="kv"><b>Drag & Drop</b><span>Drop chemicals into beakers/test tubes</span></div>
+          <div class="kv"><b>Safety Alerts</b><span>Automatic warnings for risky mixes</span></div>
+          <div class="kv"><b>History</b><span>All your experiments logged locally</span></div>
+          <div class="kv"><b>PDF Export</b><span>(via backend step) Generate reports</span></div>
+          <div class="kv"><b>Responsive</b><span>Works great on mobile and desktop</span></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+  <script src="mix.js" defer></script>
+</body>
+</html>
